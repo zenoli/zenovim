@@ -5,8 +5,6 @@ local options = {
     number = true,
     relativenumber = true,
     timeoutlen = 1000,
-    -- ttimeoutlen = 10,
-    -- mouse = "a",
     swapfile = false,
     updatetime = 100,
 
