@@ -7,6 +7,7 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-calc",
+        "petertriho/cmp-git",
         "saadparwaiz1/cmp_luasnip",
         "onsails/lspkind.nvim",
     },
@@ -45,6 +46,7 @@ return {
                 { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
+                { name = "git" },
                 { name = "calc" },
             }),
             formatting = {
@@ -61,6 +63,7 @@ return {
                                 luasnip = "[Snippet]",
                                 buffer = "[Buffer]",
                                 path = "[Path]",
+                                git = "[GIT]",
                             })[entry.source.name]
                             vim_item.kind = icons[vim_item.kind]
                         end
@@ -81,5 +84,7 @@ return {
         local cmp = require("cmp")
         cmp.setup(opts)
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+        require("cmp_git").setup()
     end,
 }
