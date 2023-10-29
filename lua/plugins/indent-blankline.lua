@@ -2,8 +2,16 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     dependencies = "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
+    main = "ibl",
     opts = {
-        show_current_context = true,
-        show_current_context_start = false,
+        scope = {
+            enabled = true,
+            show_start = false,
+            show_end = false,
+            highlight = "CursorLineNr"
+        },
+        exclude = {
+            filetypes = { "markdown" }
+        }
     },
 }
