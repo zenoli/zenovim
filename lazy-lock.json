@@ -51,5 +51,6 @@
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
   "tokyonight.nvim": { "branch": "main", "commit": "f247ee700b569ed43f39320413a13ba9b0aef0db" },
   "typescript-tools.nvim": { "branch": "master", "commit": "f7c45763fe1513e257ebf45bedfc5e6dd1aade78" },
-  "vim-fugitive": { "branch": "master", "commit": "b3b838d690f315a503ec4af8c634bdff3b200aaf" }
+  "vim-fugitive": { "branch": "master", "commit": "b3b838d690f315a503ec4af8c634bdff3b200aaf" },
+  "winbar.nvim": { "branch": "main", "commit": "13739fdb31be51a1000486189662596f07a59a31" }
 }
