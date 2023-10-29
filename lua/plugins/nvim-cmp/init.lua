@@ -85,6 +85,6 @@ return {
         cmp.setup(opts)
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
-        require("cmp_git").setup()
+        require("cmp_git").setup({ filetypes = { "gitcommit", "octo", "markdown" } })
     end,
 }
