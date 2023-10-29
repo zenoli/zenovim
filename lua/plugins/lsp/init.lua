@@ -5,6 +5,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         "creativenull/efmls-configs-nvim",
         "folke/neoconf.nvim",
+        "SmiteshP/nvim-navic",
     },
     import = "plugins.lsp.aux",
     event = { "BufReadPre", "BufNewFile" },

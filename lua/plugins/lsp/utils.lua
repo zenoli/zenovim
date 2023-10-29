@@ -4,7 +4,12 @@ function M.setup_keybindings()
     vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(attachEvent)
-            require "plugins.lsp.keybindings".setup(attachEvent.buf)
+            local client = vim.lsp.get_client_by_id(attachEvent.data.client_id)
+            local buf = attachEvent.buf
+            require "plugins.lsp.keybindings".setup(buf)
+            if client.server_capabilities.documentSymbolProvider then
+                require "nvim-navic".attach(client, buf)
+            end
         end,
     })
 end
@@ -27,7 +32,6 @@ function M.setup_default_config(opts)
         capabilities = require "cmp_nvim_lsp".default_capabilities(),
     })
 end
-
 
 local function get_server_config(opts, server)
     local default = {
