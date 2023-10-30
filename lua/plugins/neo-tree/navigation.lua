@@ -5,10 +5,12 @@ local neotree_cmd = require "neo-tree.sources.filesystem.commands"
 
 function M.navigate_out(state)
     local node = state.tree:get_node()
-    local is_cwd = function (n)
+    local is_cwd = function(n)
         return n.path == vim.fn.getcwd()
     end
-    if node.type == "directory" and not is_cwd(node) and (node:is_expanded() or node.empty_expanded) then
+    if node.type == "directory"
+        and not is_cwd(node)
+        and (node:is_expanded() or node.empty_expanded) then
         neotree_fs.toggle_directory(state, node)
     else
         local parent_id = node:get_parent_id()

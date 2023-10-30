@@ -36,7 +36,7 @@ return {
             pattern = "MasonToolsStartingInstall",
             callback = function()
                 vim.schedule(function()
-                    vim.cmd [[normal q]]  -- Try closing open floating windows
+                    vim.cmd [[normal q]] -- Try closing open floating windows
                     require "mason.ui".open()
                 end)
             end,

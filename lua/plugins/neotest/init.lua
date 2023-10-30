@@ -15,7 +15,7 @@ return {
         end
 
         require "neotest".setup {
-            adapters = adapters
+            adapters = adapters,
         }
     end,
 }

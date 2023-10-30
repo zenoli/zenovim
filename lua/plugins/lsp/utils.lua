@@ -24,13 +24,23 @@ end
 
 function M.setup_default_config(opts)
     local lspconfig = require "lspconfig"
-    lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, {
-        handlers = {
-            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = opts.border, silent = true }),
-            ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = opts.border }),
-        },
-        capabilities = require "cmp_nvim_lsp".default_capabilities(),
-    })
+    lspconfig.util.default_config = vim.tbl_deep_extend(
+        "force",
+        lspconfig.util.default_config,
+        {
+            handlers = {
+                ["textDocument/hover"] = vim.lsp.with(
+                    vim.lsp.handlers.hover,
+                    { border = opts.border, silent = true }
+                ),
+                ["textDocument/signatureHelp"] = vim.lsp.with(
+                    vim.lsp.handlers.signature_help,
+                    { border = opts.border }
+                ),
+            },
+            capabilities = require "cmp_nvim_lsp".default_capabilities(),
+        }
+    )
 end
 
 local function get_server_config(opts, server)

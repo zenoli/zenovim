@@ -6,7 +6,7 @@ return {
             left = "<a-h>",
             down = "<a-j>",
             up = "<a-k>",
-            right = "<a-l>"
-        }
-    }
+            right = "<a-l>",
+        },
+    },
 }

@@ -9,4 +9,3 @@ function M.mason_package_path()
 end
 
 return M
-

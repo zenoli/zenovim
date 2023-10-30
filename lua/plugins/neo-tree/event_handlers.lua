@@ -5,7 +5,7 @@ return {
             if args.position == "left" or args.position == "right" then
                 vim.cmd("wincmd =")
             end
-        end
+        end,
     },
     {
         event = "neo_tree_window_after_close",
@@ -13,6 +13,6 @@ return {
             if args.position == "left" or args.position == "right" then
                 vim.cmd("wincmd =")
             end
-        end
-    }
+        end,
+    },
 }

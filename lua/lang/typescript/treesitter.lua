@@ -5,7 +5,7 @@ return {
             typescript = {
                 "typescript",
                 "javascript",
-                "tsx"
+                "tsx",
             },
         },
     },

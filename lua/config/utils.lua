@@ -33,21 +33,4 @@ function M.if_module(module_name, cb, opts)
     end
 end
 
-function M.generate_import_specs()
-    local specs = { { import = "plugins" } }
-    local outer_stats = M.read_dir("lua/lang")
-    for _, outer_stat in ipairs(outer_stats) do
-        if outer_stat.type == "directory" then
-            local inner_stats = M.read_dir("lua/lang/" .. outer_stat.name)
-           table.insert(specs, { import = "lang" .. "." .. outer_stat.name })
-            for _, inner_stat in ipairs(inner_stats) do
-                if inner_stat.type == "directory" then
-                    table.insert(specs, { import = "lang." .. outer_stat.name .. "." .. inner_stat.name})
-                end
-            end
-        end
-    end
-    return specs
-end
-
 return M
