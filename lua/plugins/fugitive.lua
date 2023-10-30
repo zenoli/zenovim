@@ -10,5 +10,5 @@ return {
         { "<leader>g<leader>", ":Git ",                                desc = "Git prompt" },
         { "<leader>gh",        ":diffget //2<cr> ",                    desc = "Git get left" },
         { "<leader>gl",        ":diffget //3<cr> ",                    desc = "Git get right" },
-    }
+    },
 }

@@ -7,7 +7,7 @@ return {
         efm = {
             sh = function()
                 return {
-                    require("efmls-configs.formatters.shfmt")
+                    require("efmls-configs.formatters.shfmt"),
                 }
             end,
         },

@@ -16,6 +16,10 @@ return {
         -- Setup language specific adapters/configurations defined in `lang/**/dap.lua`
         local dap = require "dap"
         dap.adapters = vim.tbl_extend("force", dap.adapters, opts.adapters)
-        dap.configurations = vim.tbl_extend("force", dap.configurations, opts.configurations)
+        dap.configurations = vim.tbl_extend(
+            "force",
+            dap.configurations,
+            opts.configurations
+        )
     end,
 }

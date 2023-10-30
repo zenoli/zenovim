@@ -9,7 +9,7 @@ return {
     {
         "<leader>td",
         function()
-            require("neotest").run.run({ strategy = "dap" })
+            require("neotest").run.run { strategy = "dap" }
         end,
         desc = "Debug nearest test",
     },

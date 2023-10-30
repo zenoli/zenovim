@@ -25,7 +25,10 @@ function M.generate_import_specs()
             table.insert(specs, { import = "lang" .. "." .. outer_stat.name })
             for _, inner_stat in ipairs(inner_stats) do
                 if inner_stat.type == "directory" then
-                    table.insert(specs, { import = "lang." .. outer_stat.name .. "." .. inner_stat.name })
+                    table.insert(
+                        specs,
+                        { import = "lang." .. outer_stat.name .. "." .. inner_stat.name }
+                    )
                 end
             end
         end

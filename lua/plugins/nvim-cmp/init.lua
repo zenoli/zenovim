@@ -4,8 +4,7 @@ return {
     event = "InsertEnter",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
         "hrsh7th/cmp-calc",
         "petertriho/cmp-git",
         "saadparwaiz1/cmp_luasnip",
@@ -35,11 +34,13 @@ return {
                 ["<c-j>"] = cmp.mapping.scroll_docs(4),
                 ["<c-space>"] = cmp.mapping.complete(),
                 ["<c-e>"] = cmp.mapping.abort(),
-                ["<cr>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ["<cr>"] = cmp.mapping.confirm { select = true },
                 ["<s-cr>"] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
-                }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                },
+                -- Accept currently selected item. Set `select` to `false`
+                -- to only confirm explicitly selected items.
             },
             sources = cmp.config.sources {
                 { name = "nvim_lsp" },

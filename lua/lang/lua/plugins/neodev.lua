@@ -5,7 +5,7 @@ return {
         library = {
             runtime = false,
             plugins = false,
-            types = true
-        }
-    }
+            types = true,
+        },
+    },
 }

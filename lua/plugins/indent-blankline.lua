@@ -8,10 +8,10 @@ return {
             enabled = true,
             show_start = false,
             show_end = false,
-            highlight = "CursorLineNr"
+            highlight = "CursorLineNr",
         },
         exclude = {
-            filetypes = { "markdown" }
-        }
+            filetypes = { "markdown" },
+        },
     },
 }

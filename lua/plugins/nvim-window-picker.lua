@@ -14,7 +14,7 @@ return {
                     "notify",
                     "quickfix",
                     "help",
-                    "fugitive"
+                    "fugitive",
                 },
                 buftype = { "terminal" },
             },
@@ -28,5 +28,5 @@ return {
                 },
             },
         },
-    }
+    },
 }

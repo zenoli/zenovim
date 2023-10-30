@@ -12,7 +12,7 @@ return {
             -- dirname = { link = "SpecialKey" },
             basename = { link = "String", bold = true },
             context = { link = "Function" },
-            separator = { link = "barbecue_dirname" }
-        }
+            separator = { link = "barbecue_dirname" },
+        },
     },
 }

@@ -1,6 +1,8 @@
-local bash_debug_adapter_bin = require("plugins.mason.utils").mason_bin_path() .. "/bash-debug-adapter"
+local bash_debug_adapter_bin = require("plugins.mason.utils").mason_bin_path()
+    .. "/bash-debug-adapter"
 local bash_debug_adapter_path = require("plugins.mason.utils").mason_package_path()
     .. "/bash-debug-adapter/extension/bashdb_dir"
+
 return {
     "mfussenegger/nvim-dap",
     opts = {

@@ -8,8 +8,16 @@ return {
         "s1n7ax/nvim-window-picker",
     },
     keys = {
-        { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
-        { "<localleader><localleader>", "<cmd>Neotree reveal<cr>", desc = "Reveal current file in Neotree" },
+        {
+            "<leader>e",
+            "<cmd>Neotree toggle<cr>",
+            desc = "Toggle Neotree",
+        },
+        {
+            "<localleader><localleader>",
+            "<cmd>Neotree reveal<cr>",
+            desc = "Reveal current file in Neotree",
+        },
     },
     opts = function()
         local clipboard_icons = {

@@ -1,4 +1,4 @@
 return {
     "creativenull/efmls-configs-nvim",
-    version = "v1.x.x" -- version is optional, but recommended
+    version = "v1.x.x", -- version is optional, but recommended
 }
