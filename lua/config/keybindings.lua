@@ -7,8 +7,10 @@ vim.g.maplocalleader = [[\]] -- Use backslash as localleader
 map("", "<space>", "<nop>")  -- disable space because leader
 map("n", "q:", "<nop>")
 
-map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit current window" })
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit current buffer" })
 map("n", "<leader>Q", "<cmd>qa<cr>", { desc = "Exit vim (if no unsaved buffers)" })
+map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write current buffer" })
+map("n", "<leader>W", "<cmd>wa<cr>", { desc = "Write all buffers" })
 map("n", "<leader>s<leader>", ":% s/", { desc = "Substitue all" })
 map("v", "<leader>s<leader>", ": s/", { desc = "Substitue visual selection" })
 map("n", "<leader><esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Disable hlsearch" })
