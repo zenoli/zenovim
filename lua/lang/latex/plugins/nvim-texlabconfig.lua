@@ -1,5 +1,6 @@
 return {
     "f3fora/nvim-texlabconfig",
-    opts = {},
+    ft = "tex",
     build = "go build",
+    opts = {},
 }

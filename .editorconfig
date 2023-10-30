@@ -1,6 +1,7 @@
 [*.lua]
 indent_style = space
 indent_size = 4
+quote_style = double
 call_arg_parentheses = remove_table_only
 max_line_length = 100
 trailing_table_separator = smart
