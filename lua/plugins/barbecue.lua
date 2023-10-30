@@ -6,6 +6,7 @@ return {
         "SmiteshP/nvim-navic",
         "nvim-tree/nvim-web-devicons", -- optional dependency
     },
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
         theme = {
             dirname = { fg = "#737aa2" },
