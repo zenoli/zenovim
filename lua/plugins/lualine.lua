@@ -11,12 +11,13 @@ return {
             ignore_focus = { "neo-tree", "calendar" },
             -- These symbols can be found by searching for "e0b" in
             -- https://www.nerdfonts.com/cheat-sheet
-            component_separators = { left = "", right = "" },
+            component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
         },
         sections = {
             lualine_b = { "branch" },
             lualine_c = {
+                "diagnostics",
                 {
                     "filename",
                     file_status = true, -- Displays file status (readonly status, modified status)
