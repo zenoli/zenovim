@@ -37,6 +37,11 @@ map("n", "]q", "<cmd>cnext<cr>", { desc = "Next quickfix item" })
 map("n", "[q", "<cmd>cprevious<cr>", { desc = "Previous quickfix item" })
 map("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 
+-- Locationlist navigation
+map("n", "]l", "<cmd>lnext<cr>", { desc = "Next locationlist item" })
+map("n", "[l", "<cmd>lprevious<cr>", { desc = "Previous locationlist item" })
+map("n", "<leader>ll", "<cmd>lclose<cr>", { desc = "Close locationlist list" })
+
 -- Convenient pasting
 map("n", "<leader>py", '"0p', { desc = "Paste most recent yank (after)" })
 map("n", "<leader>pY", '"0P', { desc = "Paste most recent yank (before)" })
