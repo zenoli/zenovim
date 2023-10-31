@@ -17,7 +17,7 @@ local M = {
         JavaSE_17 = "JavaSE-17",
         JavaSE_18 = "JavaSE-18",
         JAVASE_19 = "JavaSE-19",
-    }
+    },
 }
 
 function M.get_root_dir()
@@ -47,6 +47,10 @@ function M.get_cmd()
         M.get_jdtls_config_dir(),
         "-data",
         M.get_jdtls_workspace_dir(),
+        "--jvm-arg=" .. string.format(
+            "-javaagent:%s",
+            require("plugins.mason.utils").mason_package_path() .. "/jdtls/lombok.jar"
+        ),
     }
 end
 
