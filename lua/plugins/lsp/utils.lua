@@ -8,7 +8,8 @@ function M.setup_keybindings()
             local buf = attachEvent.buf
             require "plugins.lsp.keybindings".setup(buf)
             if client.server_capabilities.documentSymbolProvider then
-                require "nvim-navic".attach(client, buf)
+                require("nvim-navic").attach(client, buf)
+                require("nvim-navbuddy").attach(client, buf)
             end
         end,
     })
