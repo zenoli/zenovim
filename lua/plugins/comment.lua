@@ -1,6 +1,5 @@
 return {
     "numToStr/Comment.nvim",
-    keys = { "gc", "gcc", "gco", "gcO", "gcb" },
-    -- event = "VeryLazy",
+    keys = { "gcc", "gco", "gcO", "gcb", { "gc", "S", mode = "x" } },
     opts = {},
 }
