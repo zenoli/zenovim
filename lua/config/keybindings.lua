@@ -31,6 +31,7 @@ map("n", "<c-k>", "5<c-y>", { desc = "Scroll up" })
 -- Tab navigation
 map("n", "]t", "<cmd>tabnext<cr>", { desc = "Next tab" })
 map("n", "[t", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
+map("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Previous tab" })
 
 -- Quickfixlist navigation
 map("n", "]q", "<cmd>cnext<cr>", { desc = "Next quickfix item" })
