@@ -68,7 +68,7 @@ function M.get_bundles()
             local java_test_pkg = mason_registry.get_package("java-test")
             local java_test_path = java_test_pkg:get_install_path()
             vim.list_extend(jar_patterns, {
-                java_test_path .. "/extension/server/*.jar",
+                java_test_path .. "/server/*.jar",
             })
         end
         for _, jar_pattern in ipairs(jar_patterns) do

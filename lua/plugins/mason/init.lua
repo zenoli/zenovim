@@ -4,7 +4,13 @@ return {
         { "williamboman/mason-lspconfig.nvim" },
         {
             "williamboman/mason.nvim",
-            opts = { ui = { border = "rounded" } },
+            opts = {
+                ui = { border = "rounded" },
+                registries = {
+                    "file:" .. vim.fn.stdpath("config") .. "/registry",
+                    "github:mason-org/mason-registry",
+                },
+            },
             cmd = "Mason",
             build = ":MasonUpdate",
         },
