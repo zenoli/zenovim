@@ -9,6 +9,7 @@ return {
             -- Ignore picker for ft/bt:
             bo = {
                 filetype = {
+                    "aerial",
                     "neo-tree",
                     "neo-tree-popup",
                     "notify",
