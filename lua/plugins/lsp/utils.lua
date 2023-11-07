@@ -2,7 +2,8 @@ local M = {}
 
 function M.register_on_attach(callback)
     vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+        group = vim.api.nvim_create_augroup("LspConfig", {}),
+        desc = "Define default lsp settings",
         callback = function(attachEvent)
             local client = vim.lsp.get_client_by_id(attachEvent.data.client_id)
             local buf = attachEvent.buf

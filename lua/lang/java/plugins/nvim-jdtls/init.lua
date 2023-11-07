@@ -34,6 +34,8 @@ return {
         local dap_opts = { hotcodereplace = "auto", config_overrides = {} }
 
         vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("Jdtls", {}),
+            desc = "Define jdtls specific lsp settings",
             callback = function(args)
                 local client = vim.lsp.get_client_by_id(args.data.client_id)
                 if client and client.name == "jdtls" then
