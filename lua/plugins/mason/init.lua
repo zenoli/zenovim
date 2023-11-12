@@ -40,9 +40,11 @@ return {
 
         vim.api.nvim_create_autocmd("User", {
             pattern = "MasonToolsStartingInstall",
-            callback = function()
+            callback = function(ev)
                 vim.schedule(function()
-                    vim.cmd [[normal q]] -- Try closing open floating windows
+                    if vim.bo.filetype == "lazy" then
+                        vim.cmd [[normal q]] -- Try closing open lazy window
+                    end
                     require "mason.ui".open()
                 end)
             end,
