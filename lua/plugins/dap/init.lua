@@ -21,5 +21,6 @@ return {
             dap.configurations,
             opts.configurations
         )
+        require('dap.ext.vscode').load_launchjs()
     end,
 }
