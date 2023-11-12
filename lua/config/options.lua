@@ -33,9 +33,18 @@ local options = {
 
     -- Scrolling
     scrolloff = 5,
+    sidescrolloff = 10,
 
     -- Conceal
     conceallevel = 2,
+
+    -- Listchars
+    list = true,
+    listchars = {
+        extends = "󰁔",
+        precedes = "󰁍",
+    },
+    wrap = false,
 }
 
 for k, v in pairs(options) do
