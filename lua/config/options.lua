@@ -33,6 +33,9 @@ local options = {
 
     -- Scrolling
     scrolloff = 5,
+
+    -- Conceal
+    conceallevel = 2,
 }
 
 for k, v in pairs(options) do
