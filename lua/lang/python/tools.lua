@@ -3,11 +3,9 @@ return {
     opts = {
         ensure_installed = {
             python = {
-                "black",
                 "debugpy",
-                "flake8",
-                "isort",
                 "pyright",
+                "ruff-lsp",
             },
         },
     },
