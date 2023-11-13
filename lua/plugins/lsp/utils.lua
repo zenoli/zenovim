@@ -19,9 +19,23 @@ function M.setup_diagnostics(opts)
     end
     vim.diagnostic.config(opts.config)
 
+    local hover_handler = vim.lsp.handlers.hover
     local border = opts.config.float.border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover,
+        function(_, result, ctx, config)
+            local is_java = vim.api.nvim_buf_get_option(0, "filetype") == "java"
+            if is_java then
+                config.stylize_markdown = false
+                config.wrap = false
+                config.max_width = 180
+            end
+            local bufnr, winnr = hover_handler(_, result, ctx, config)
+            if is_java and bufnr ~= nil and winnr ~= nil then
+                vim.api.nvim_buf_set_option(bufnr, "filetype", "markdown")
+                vim.api.nvim_win_set_option(winnr, "concealcursor", "n")
+            end
+            return bufnr, winnr
+        end,
         { border = border, silent = true }
     )
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
