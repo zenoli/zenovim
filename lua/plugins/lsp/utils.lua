@@ -27,7 +27,22 @@ function M.setup_diagnostics(opts)
             if is_java then
                 config.stylize_markdown = false
                 config.wrap = false
-                config.max_width = 180
+                -- config.max_width = 180
+                config.max_height = math.floor(vim.o.lines * 0.4)
+                config.max_width = math.floor(vim.o.columns * 0.6)
+                local new_contents = {}
+                if (type(result.contents) == "table") then
+                    for _, content_segment in ipairs(result.contents) do
+                        if type(content_segment) == "string" then
+                            for sentence in string.gmatch(content_segment, ".-[%.?!:]%s") do
+                                table.insert(new_contents, sentence)
+                            end
+                        else
+                            table.insert(new_contents, content_segment)
+                        end
+                    end
+                end
+                result.contents = new_contents
             end
             local bufnr, winnr = hover_handler(_, result, ctx, config)
             if is_java and bufnr ~= nil and winnr ~= nil then
