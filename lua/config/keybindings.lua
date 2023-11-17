@@ -27,6 +27,8 @@ map("n", "<leader>D", "<cmd>bp<bar>bd #<cr>", { desc = "Close current buffer" })
 -- Scrolling
 map("n", "<c-j>", "5<c-e>", { desc = "Scroll down" })
 map("n", "<c-k>", "5<c-y>", { desc = "Scroll up" })
+map("n", "<c-l>", "5zl", { desc = "Scroll down" })
+map("n", "<c-h>", "5zh", { desc = "Scroll up" })
 
 -- Tab navigation
 map("n", "]t", "<cmd>tabnext<cr>", { desc = "Next tab" })
