@@ -5,6 +5,9 @@ return {
         map("n", "[d", vim.diagnostic.goto_prev, { desc = "Goto previous diagnostic" })
         map("n", "]d", vim.diagnostic.goto_next, { desc = "Goto next diagnostic" })
         map("n", "K", vim.lsp.buf.hover, { desc = "Lsp hover" })
+        map("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+        map("i", "<c-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+
         map("n", "gi", vim.lsp.buf.implementation, { desc = "Goto implementation" })
         map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
         map("n", "<leader>F", vim.lsp.buf.format, { desc = "Format document" })
