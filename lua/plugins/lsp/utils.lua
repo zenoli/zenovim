@@ -1,5 +1,44 @@
 local M = {}
 
+local function setup_diagnostics(opts)
+    for name, icon in pairs(opts.signs) do
+        name = "DiagnosticSign" .. name
+        vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+    end
+    vim.diagnostic.config(opts.config)
+end
+
+local function get_hover_handler(default_handler)
+    return function(_, result, ctx, config)
+        local is_java = vim.api.nvim_buf_get_option(0, "filetype") == "java"
+        if is_java then
+            config.stylize_markdown = false
+            config.wrap = false
+            config.max_height = math.floor(vim.o.lines * 0.4)
+            config.max_width = math.floor(vim.o.columns * 0.6)
+            local new_contents = {}
+            if (type(result.contents) == "table") then
+                for _, content_segment in ipairs(result.contents) do
+                    if type(content_segment) == "string" then
+                        for sentence in string.gmatch(content_segment, ".-[%.?!:]%s") do
+                            table.insert(new_contents, sentence)
+                        end
+                    else
+                        table.insert(new_contents, content_segment)
+                    end
+                end
+                result.contents = new_contents
+            end
+        end
+        local bufnr, winnr = default_handler(_, result, ctx, config)
+        if is_java and bufnr ~= nil and winnr ~= nil then
+            vim.api.nvim_buf_set_option(bufnr, "filetype", "markdown")
+            vim.api.nvim_win_set_option(winnr, "concealcursor", "n")
+        end
+        return bufnr, winnr
+    end
+end
+
 function M.register_on_attach(callback)
     vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("LspConfig", {}),
@@ -12,44 +51,12 @@ function M.register_on_attach(callback)
     })
 end
 
-function M.setup_diagnostics(opts)
-    for name, icon in pairs(opts.signs) do
-        name = "DiagnosticSign" .. name
-        vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
-    end
-    vim.diagnostic.config(opts.config)
+function M.setup_handlers(opts)
+    setup_diagnostics(opts)
 
-    local hover_handler = vim.lsp.handlers.hover
     local border = opts.config.float.border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        function(_, result, ctx, config)
-            local is_java = vim.api.nvim_buf_get_option(0, "filetype") == "java"
-            if is_java then
-                config.stylize_markdown = false
-                config.wrap = false
-                config.max_height = math.floor(vim.o.lines * 0.4)
-                config.max_width = math.floor(vim.o.columns * 0.6)
-                local new_contents = {}
-                if (type(result.contents) == "table") then
-                    for _, content_segment in ipairs(result.contents) do
-                        if type(content_segment) == "string" then
-                            for sentence in string.gmatch(content_segment, ".-[%.?!:]%s") do
-                                table.insert(new_contents, sentence)
-                            end
-                        else
-                            table.insert(new_contents, content_segment)
-                        end
-                    end
-                    result.contents = new_contents
-                end
-            end
-            local bufnr, winnr = hover_handler(_, result, ctx, config)
-            if is_java and bufnr ~= nil and winnr ~= nil then
-                vim.api.nvim_buf_set_option(bufnr, "filetype", "markdown")
-                vim.api.nvim_win_set_option(winnr, "concealcursor", "n")
-            end
-            return bufnr, winnr
-        end,
+        get_hover_handler(vim.lsp.handlers.hover),
         { border = border }
     )
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
