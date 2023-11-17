@@ -3,7 +3,7 @@ return {
     lazy = true,
     opts = {
         library = {
-            runtime = false,
+            runtime = true,
             plugins = false,
             types = true,
         },
