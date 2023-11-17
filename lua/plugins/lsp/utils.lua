@@ -27,7 +27,6 @@ function M.setup_diagnostics(opts)
             if is_java then
                 config.stylize_markdown = false
                 config.wrap = false
-                -- config.max_width = 180
                 config.max_height = math.floor(vim.o.lines * 0.4)
                 config.max_width = math.floor(vim.o.columns * 0.6)
                 local new_contents = {}
@@ -41,8 +40,8 @@ function M.setup_diagnostics(opts)
                             table.insert(new_contents, content_segment)
                         end
                     end
+                    result.contents = new_contents
                 end
-                result.contents = new_contents
             end
             local bufnr, winnr = hover_handler(_, result, ctx, config)
             if is_java and bufnr ~= nil and winnr ~= nil then
@@ -51,7 +50,7 @@ function M.setup_diagnostics(opts)
             end
             return bufnr, winnr
         end,
-        { border = border, silent = true }
+        { border = border }
     )
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
         vim.lsp.handlers.signature_help,
