@@ -35,7 +35,7 @@ return {
         local lsp_utils = require "plugins.lsp.utils"
 
         lsp_utils.setup_default_config()
-        lsp_utils.setup_diagnostics(opts.diagnostics)
+        lsp_utils.setup_handlers(opts.diagnostics)
         lsp_utils.register_on_attach(function(client, buf)
             require "plugins.lsp.keybindings".setup(buf)
             if client.server_capabilities.documentSymbolProvider then
