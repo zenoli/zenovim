@@ -12,6 +12,8 @@ local options = {
     splitright = true,
 
     laststatus = 3,
+    selectmode = "mouse",
+
 
     termguicolors = true,
 
