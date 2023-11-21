@@ -7,10 +7,10 @@ return {
     },
     cmd = { "Octo" },
     keys = {
-        { "<leader>sp", "<cmd>Octo pr list<cr>" },
-        { "<leader>si", "<cmd>Octo issue list<cr>" },
-        { "<leader>rs", "<cmd>Octo review start<cr>" },
-        { "<leader>rr", "<cmd>Octo review resume<cr>" },
+        { "<leader>sp", "<cmd>Octo pr list<cr>",       desc = "Octo: List PRs" },
+        { "<leader>si", "<cmd>Octo issue list<cr>",    desc = "Octo: List issues" },
+        { "<leader>rs", "<cmd>Octo review start<cr>",  desc = "Octo: Star review" },
+        { "<leader>rr", "<cmd>Octo review resume<cr>", desc = "Octo: Resume review" },
     },
     opts = {
         use_local_fs = false, -- use local files on right side of reviews
@@ -31,23 +31,23 @@ return {
             use_signcolumn = true, -- show "modified" marks on the sign column
         },
         issues = {
-            order_by = {    -- criteria to sort results of `Octo issue list`
+            order_by = {              -- criteria to sort results of `Octo issue list`
                 field = "CREATED_AT", -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
                 direction =
-                "DESC",     -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
+                "DESC",               -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
             },
         },
         pull_requests = {
-            order_by = {                     -- criteria to sort the results of `Octo pr list`
-                field = "CREATED_AT",        -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
+            order_by = {              -- criteria to sort the results of `Octo pr list`
+                field = "CREATED_AT", -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
                 direction =
-                "DESC",                      -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
+                "DESC",               -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
             },
             always_select_remote_on_create =
-            "false",                         -- always give prompt to select base remote repo when creating PRs
+            "false", -- always give prompt to select base remote repo when creating PRs
         },
         file_panel = {
-            size = 10, -- changed files panel rows
+            size = 10,        -- changed files panel rows
             use_icons = true, -- use web-devicons in file panel (if false, nvim-web-devicons does not need to be installed)
         },
         mappings = {
