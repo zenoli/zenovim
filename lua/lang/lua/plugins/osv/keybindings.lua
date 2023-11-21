@@ -1,13 +1,13 @@
 return {
     {
-        "<leader>daL",
+        "<F5>",
         function()
             require "osv".launch { port = 8086 }
         end,
         desc = "Adapter Lua Server",
     },
     {
-        "<leader>dal",
+        "<leader>do",
         function()
             require "osv".run_this()
         end,
