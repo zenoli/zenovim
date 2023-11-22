@@ -43,6 +43,7 @@ local options = {
     -- Listchars
     list = true,
     listchars = {
+        tab = "▷▷",
         extends = "󰁔",
         precedes = "󰁍",
     },
