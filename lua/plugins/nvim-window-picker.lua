@@ -13,7 +13,7 @@ return {
                     "neo-tree",
                     "neo-tree-popup",
                     "notify",
-                    "quickfix",
+                    "qf",
                     "help",
                     "fugitive",
                 },
