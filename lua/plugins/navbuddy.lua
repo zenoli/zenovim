@@ -6,7 +6,7 @@ return {
     },
     cmd = "Navbuddy",
     keys = {
-        { "<leader>O", "<cmd>Navbuddy<cr>", desc = "Toggle Aearial drawer" },
+        { "<leader>O", "<cmd>Navbuddy<cr>", desc = "Toggle Navbudy" },
     },
     opts = {
         lsp = { auto_attach = false },
