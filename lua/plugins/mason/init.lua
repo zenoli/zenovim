@@ -23,6 +23,8 @@ return {
     opts = {
         ensure_installed = {
             general = {
+                "docker-compose-language-service",
+                "dockerfile-language-server",
                 "efm",
                 "lua_ls",
             },
