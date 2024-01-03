@@ -20,6 +20,8 @@ return {
         },
         highlight = {
             enable = true,
+            -- Temporary workaround for [this issue](https://github.com/nvim-treesitter/nvim-treesitter/issues/1573#issuecomment-1780727057)
+            additional_vim_regex_highlighting = { "python" },
             disable = function(lang, buf)
                 local max_filesize = 100 * 1024 -- 100 KB
                 local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
