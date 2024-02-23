@@ -7,7 +7,6 @@ return {
             opts = {
                 ui = { border = "rounded" },
                 registries = {
-                    "file:" .. vim.fn.stdpath("config") .. "/registry",
                     "github:mason-org/mason-registry",
                 },
             },
