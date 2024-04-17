@@ -3,7 +3,8 @@ return {
     opts = {
         ensure_installed = {
             typescript = {
-                "prettier",
+                "js-debug-adapter",
+                "prettierd",
                 "typescript-language-server", -- tsserver
             },
         },
