@@ -3,6 +3,7 @@ return {
     opts = {
         ensure_installed = {
             typescript = {
+                "emmet-language-server",
                 "js-debug-adapter",
                 "prettierd",
                 "typescript-language-server", -- tsserver
