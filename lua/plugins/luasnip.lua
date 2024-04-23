@@ -7,10 +7,12 @@ return {
         enable_autosnippets = true,
     },
     config = function(_, opts)
-        require "luasnip.loaders.from_vscode".lazy_load()
+        local luasnip = require "luasnip"
+        luasnip.filetype_extend("typescriptreact", { "javascript" })
+        luasnip.filetype_extend("typescript", { "javascript" })
 
         local map = require "config.utils".map
-        local luasnip = require "luasnip"
+        require "luasnip.loaders.from_vscode".lazy_load()
         luasnip.setup(opts)
 
         map({ "i", "n", "s" }, "<c-l>", function()
