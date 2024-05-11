@@ -41,12 +41,12 @@ map("n", "[q", "<cmd>cprevious<cr>", { desc = "Previous quickfix item" })
 map("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Close quickfix list" })
 
 -- Convenient pasting
-map({ "n", "x" }, "<leader>py", '"0p', { desc = "Paste most recent yank (after)" })
-map({ "n", "x" }, "<leader>pY", '"0P', { desc = "Paste most recent yank (before)" })
-map({ "n", "x" }, "<leader>pd", '"-p', { desc = "Paste most recent small-deletion (after)" })
-map({ "n", "x" }, "<leader>pD", '"-P', { desc = "Paste most recent small-deletion (before)" })
-map({ "n", "x" }, "<leader>p1", '"1p', { desc = "Paste most recent deletion (after)" })
-map({ "n", "x" }, "<leader>p1", '"1P', { desc = "Paste most recent deletion (before)" })
+map({ "n", "x" }, "<leader>0", '"0p', { desc = "Paste most recent yank (after)" })
+map({ "n", "x" }, "<leader><leader>0", '"0P', { desc = "Paste most recent yank (before)" })
+map({ "n", "x" }, "<leader>-", '"-p', { desc = "Paste most recent small-deletion (after)" })
+map({ "n", "x" }, "<leader><leader>-", '"-P', { desc = "Paste most recent small-deletion (before)" })
+map({ "n", "x" }, "<leader>1", '"1p', { desc = "Paste most recent deletion (after)" })
+map({ "n", "x" }, "<leader><leader>1", '"1P', { desc = "Paste most recent deletion (before)" })
 map({ "n", "x" }, "<leader>pc", '$"+p', { desc = "Paste from system clipboard (after)" })
 map({ "n", "x" }, "<leader>pC", '$"+P', { desc = "Paste from system clipboard (before)" })
 
