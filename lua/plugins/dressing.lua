@@ -24,7 +24,7 @@ return {
             select = {
                 enabled = true,
                 -- Change the order to use `telescope` backend
-                backend = { "builtin", "telescope" },
+                backend = { "telescope", "builtin" },
                 builtin = {
                     win_options = {
                         winblend = transparency,
