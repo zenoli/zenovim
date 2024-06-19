@@ -7,4 +7,7 @@ return {
         "typescript",
         "typescriptreact",
     },
+    config = function(_, opts)
+        require "colorizer".setup(opts, { names = false })
+    end,
 }
