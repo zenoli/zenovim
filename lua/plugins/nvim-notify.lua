@@ -8,6 +8,16 @@ return {
     config = function(_, opts)
         local nvim_notify = require "notify"
         nvim_notify.setup(opts)
-        vim.notify = nvim_notify
+
+        local banned_messages = { "No information available" }
+
+        vim.notify = function(msg, ...)
+            for _, banned in ipairs(banned_messages) do
+                if msg == banned then
+                    return
+                end
+            end
+            nvim_notify(msg, ...)
+        end
     end,
 }
