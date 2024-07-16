@@ -4,7 +4,7 @@ return {
         ensure_installed = {
             python = {
                 "debugpy",
-                "pyright",
+                "basedpyright",
                 "ruff-lsp",
             },
         },
