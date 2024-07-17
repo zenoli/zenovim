@@ -1,6 +1,7 @@
 return {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
+    enabled = true,
     opts = {
         render = "default",
         timeout = 2000, -- takes a total of 4s (1 fade-in + 2 timeout + 1 fadeout)
