@@ -57,6 +57,7 @@
   "octo.nvim": { "branch": "master", "commit": "5d6bed660ff18878a9096b3acef9c444b85021ac" },
   "one-small-step-for-vimkind": { "branch": "main", "commit": "94b06d81209627d0098c4c5a14714e42a792bf0b" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
+  "render-markdown": { "branch": "main", "commit": "3b8f191d8acbd75d55665d0ffc27fce659361249" },
   "schemastore.nvim": { "branch": "main", "commit": "6316dc88db89d97d190f24547adddd13569fb746" },
   "scope.nvim": { "branch": "main", "commit": "cd27af77ad61a7199af5c28d27013fb956eb0e3e" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },

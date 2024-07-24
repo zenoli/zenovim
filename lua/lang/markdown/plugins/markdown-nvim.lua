@@ -5,8 +5,6 @@ return {
         checkbox = {
             unchecked = { icon = " " },
             checked = { icon = "󰄲 " },
-            -- unchecked = { icon = "󰄷 "},
-            -- checked = { icon = "󰄸 "},
         },
         bullet = {
             right_pad = 1,
