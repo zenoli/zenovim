@@ -51,4 +51,4 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-vim.g.python3_host_prog = "/usr/bin/python3.12"
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
