@@ -37,9 +37,6 @@ local options = {
     scrolloff = 5,
     sidescrolloff = 10,
 
-    -- Conceal
-    conceallevel = 2,
-
     -- Listchars
     list = true,
     listchars = {
