@@ -5,7 +5,7 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-fzf-native.nvim",
     },
-    tag = "0.1.4",
+    tag = "0.1.8",
     cmd = "Telescope",
     keys = require "plugins.telescope.keybdindings",
     config = function()
