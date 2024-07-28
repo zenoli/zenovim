@@ -2,7 +2,6 @@ return {
     "MeanderingProgrammer/markdown.nvim",
     main = "render-markdown",
     opts = {
-        -- log_level = "debug",
         checkbox = {
             unchecked = { icon = " " },
             checked = { icon = "󰄲 " },
@@ -10,9 +9,9 @@ return {
             -- checked = { icon = "󰄸 "},
         },
         bullet = {
-            icons = { "", '●', '', "◆" },
+            right_pad = 1,
+            icons = { "●", '', "◆", '◇' },
         },
     },
-    name = "render-markdown",                                                            -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 }
